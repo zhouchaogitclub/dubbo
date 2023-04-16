@@ -29,6 +29,11 @@ public class ZookeeperRegistryFactory extends AbstractRegistryFactory {
 
     private ZookeeperTransporter zookeeperTransporter;
 
+    /**
+     * 这里会通过扩展的注入机制设置值
+     *
+     * @param zookeeperTransporter
+     */
     public void setZookeeperTransporter(ZookeeperTransporter zookeeperTransporter) {
         this.zookeeperTransporter = zookeeperTransporter;
     }

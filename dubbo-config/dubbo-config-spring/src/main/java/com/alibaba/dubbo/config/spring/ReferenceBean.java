@@ -173,6 +173,7 @@ public class ReferenceBean<T> extends ReferenceConfig<T> implements FactoryBean,
         if (b == null && getConsumer() != null) {
             b = getConsumer().isInit();
         }
+        // 如果在consumer侧设置了init=true,则会立刻进行初始化,也就是饿汉式,dubbo默认采用懒汉式,也就是当提供者被注入到某个bean时才会进行初始化
         if (b != null && b.booleanValue()) {
             getObject();
         }
